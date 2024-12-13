@@ -1,7 +1,6 @@
 from ldap3 import Server, Connection, ALL
 
 LDAP_ADDRESS = "ldap://HOST:PORT"  
-
 LDAP_BIND_DN = "cn=CN_,cn=users,dc=DC_,dc=com,dc=tw"
 LDAP_BIND_PASSWORD = "PASSWORD"
 LDAP_BASE_DN = "dc=DC_,dc=com,dc=tw"
