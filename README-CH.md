@@ -1,6 +1,6 @@
 # LDAP Login
 
-使用 `ldap3` 套件登入 LDAP 的範例，先以 Bind 帳密登入 LDAP 後檢驗 username 是否存在於名單中，將使用者資料取出並解析出 DN ，最後以使用者 DN 和密碼登入 LDAP。
+使用 `ldap3` 套件登入 LDAP 的範例，先以 admin 帳密登入 LDAP 後檢驗 username 是否存在於名單中，將使用者資料取出並解析出 DN ，最後以使用者 DN 和密碼登入 LDAP。
 
 ## Overview
 
