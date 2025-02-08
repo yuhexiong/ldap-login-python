@@ -1,6 +1,6 @@
-from ldap3 import Server, Connection, ALL
+from ldap3 import ALL, Connection, Server
 
-LDAP_ADDRESS = "ldap://HOST:PORT"  
+LDAP_ADDRESS = "ldap://HOST:PORT"
 LDAP_BIND_DN = "cn=CN_,cn=users,dc=DC_,dc=com,dc=tw"
 LDAP_BIND_PASSWORD = "PASSWORD"
 LDAP_BASE_DN = "dc=DC_,dc=com,dc=tw"
@@ -9,7 +9,8 @@ LDAP_BASE_DN = "dc=DC_,dc=com,dc=tw"
 def ldap_login(username, password):
     # connect to LDAP Server
     server = Server(LDAP_ADDRESS, use_ssl=True, get_info=ALL)
-    bind_conn = Connection(server, LDAP_BIND_DN, LDAP_BIND_PASSWORD, auto_bind=True)
+    bind_conn = Connection(server, LDAP_BIND_DN,
+                           LDAP_BIND_PASSWORD, auto_bind=True)
 
     search_filter = f"(sAMAccountName={username})"
 
@@ -37,8 +38,8 @@ def ldap_login(username, password):
 
 if __name__ == '__main__':
 
-    username = "USERNAME"  
-    password = "PASSWORD"  
+    username = "USERNAME"
+    password = "PASSWORD"
 
     if ldap_login(username, password):
         print(f"Login successful for user: {username}")
